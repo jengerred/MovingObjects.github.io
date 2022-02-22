@@ -1,0 +1,123 @@
+<div style= "z-index: 5;
+position:absolute;
+left: 500px;
+top: 200px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: rgb(138, 9, 26);
+">
+</div>
+<div style= "z-index: 5;
+position:absolute;
+left: 400px;
+top: 300px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: orange;
+">
+</div>
+<div style= "z-index: 5;
+position:absolute;
+left: 600px;
+top: 300px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: rgb(186, 225, 228);
+">
+</div>
+<div style= "z-index: 5;
+position:absolute;
+left: 550px;
+top: 350px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: rgb(71, 88, 88);
+">
+</div><div style= "z-index: 5;
+position:absolute;
+left: 500px;
+top: 400px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: rgb(138, 9, 26);
+">
+</div><div style= "z-index: 5;
+position:absolute;
+left: 450px;
+top: 350px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: rgb(186, 225, 228);
+">
+</div>
+<div id= "ball2" style= "z-index: 5;
+position:absolute;
+left: 450px;
+top: 250px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: rgb(236, 236, 59);
+">
+</div>
+<div id ="ball" style= "z-index: 5;
+position:absolute;
+left: 550px;
+top: 250px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: orange;
+">
+</div>
+<script>
+    let positionX = 550;
+    let positionY = 250;
+    let velocity = 200;
+    let reverse = false;
+    let ball = document.getElementById("ball");
+   
+    
+    
+    function moveBall() {
+     
+      var Xmin = 0;
+      var Xmax = 100;
+    
+      
+      var Ymin = 0;
+      var Ymax = 100;
+    
+      if (reverse) {
+        positionX = positionX - velocity;
+        positionY = positionY - velocity;
+        ball.style.left = positionX + "px";
+        ball.style.top = positionY + "px";
+      } else {
+        positionX = positionX + velocity;
+        positionY = positionY + velocity;
+        ball.style.left = positionX + "px";
+        ball.style.top = positionY + "px";
+      }
+    
+      if (
+        positionX > Xmax ||
+        positionX === Xmin ||
+        positionY > Ymax ||
+        positionY === Ymin
+      ) {
+        reverse = !reverse;
+      }
+    }
+    
+    setInterval(moveBall, 500);
+    
+    
+    </script>
+
