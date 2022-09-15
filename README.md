@@ -6,7 +6,7 @@
 Here is a pattern using circles that I created to move a circle in and out of place.
  
 ## Installation: 
-I used the pattern and shapes I created when practicing shapes. Then I set one of the circles to move in and out of place.
+I used the pattern and shapes I created when practicing shapes. Then I set the circles to move and trying to figure out how to get them in and out of place.
 
 ## Usage:
 You can not do much with this page. I created it to practice moving objects on a page. 
