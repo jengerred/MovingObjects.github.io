@@ -1,123 +1,397 @@
-<div style= "z-index: 5;
-position:absolute;
-left: 500px;
-top: 200px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: rgb(138, 9, 26);
-">
+
+ <div id = "ball" style= "z-index: 5;
+ position:absolute;
+ left: 500px;
+ top: 200px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: rgb(138, 9, 26);
+ ">
+ </div>
+ <div id = "ball2" style= "z-index: 5;
+ position:absolute;
+ left: 400px;
+ top: 300px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: orange;
+ ">
+ </div>
+ <div id = "ball3" style= "z-index: 5;
+ position:absolute;
+ left: 600px;
+ top: 300px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: rgb(186, 225, 228);
+ ">
+ </div>
+ <div id = "ball4" style= "z-index: 5;
+ position:absolute;
+ left: 550px;
+ top: 350px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: rgb(71, 88, 88);
+ ">
+ </div>
+ <div id = "ball5" style= "z-index: 5;
+ position:absolute;
+ left: 500px;
+ top: 400px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: rgb(138, 9, 26);
+ ">
+ </div>
+ <div id = "ball6"  style= "z-index: 5;
+ position:absolute;
+ left: 450px;
+ top: 350px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: rgb(186, 225, 228);
+ ">
+ </div>
+ <div id= "ball7" style= "z-index: 5;
+ position:absolute;
+ left: 450px;
+ top: 250px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: rgb(236, 236, 59);
+ ">
+ </div>
+ <div id ="ball8" style= "z-index: 5;
+ position:absolute;
+ left: 550px;
+ top: 250px;
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ background: orange;
+ ">
 </div>
-<div style= "z-index: 5;
-position:absolute;
-left: 400px;
-top: 300px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: orange;
-">
-</div>
-<div style= "z-index: 5;
-position:absolute;
-left: 600px;
-top: 300px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: rgb(186, 225, 228);
-">
-</div>
-<div style= "z-index: 5;
-position:absolute;
-left: 550px;
-top: 350px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: rgb(71, 88, 88);
-">
-</div><div style= "z-index: 5;
-position:absolute;
-left: 500px;
-top: 400px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: rgb(138, 9, 26);
-">
-</div><div style= "z-index: 5;
-position:absolute;
-left: 450px;
-top: 350px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: rgb(186, 225, 228);
-">
-</div>
-<div id= "ball2" style= "z-index: 5;
-position:absolute;
-left: 450px;
-top: 250px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: rgb(236, 236, 59);
-">
-</div>
-<div id ="ball" style= "z-index: 5;
-position:absolute;
-left: 550px;
-top: 250px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: orange;
-">
-</div>
-<script>
-    let positionX = 550;
-    let positionY = 250;
-    let velocity = 200;
+
+
+
+
+  <script>
+    let positionX = 500;
+    let positionY = 200;
+
+    let positionX2 = 400;
+    let positionY2 = 300;
+
+    let positionX3 = 600;
+    let positionY3 = 300;
+
+    let positionX4 = 550;
+    let positionY4 = 350;
+
+    let positionX5 = 500;
+    let positionY5 = 400;
+
+    let positionX6 = 450;
+    let positionY6 = 350;
+
+    let positionX7 = 450;
+    let positionY7 = 250;
+
+    let positionX8 = 550;
+    let positionY8 = 250;
+    
+    let velocity = 100;
+    let velocity2 = 100;
+    let velocity3 = 100;
+    let velocity4 = 100;
+    let velocity5 = 100;
+    let velocity6 = 100;
+    let velocity7 = 100;
+    let velocity8 = 100;
+
     let reverse = false;
-    let ball = document.getElementById("ball");
-   
     
     
+    var ball = document.getElementById("ball");
+    var ball2 = document.getElementById("ball2");
+    var ball3 = document.getElementById("ball3");
+    var ball4 = document.getElementById("ball4");
+    var ball5 = document.getElementById("ball5");
+    var ball6 = document.getElementById("ball6");
+    var ball7 = document.getElementById("ball7");
+    var ball8 = document.getElementById("ball8");
+    
+    
+
     function moveBall() {
      
+     var Xmin = 0;
+     var Xmax = 500;
+   
+     
+     var Ymin = 0;
+     var Ymax = 200;
+   
+     if (reverse) {
+       positionX = positionX - velocity;
+       positionY = positionY - velocity;
+       ball.style.left = positionX + "px";
+       ball.style.top = positionY + "px";
+     } else {
+       positionX = positionX + velocity;
+       positionY = positionY + velocity;
+       ball.style.left = positionX + "px";
+       ball.style.top = positionY + "px";
+     }
+   
+     if (
+       positionX > Xmax ||
+       positionX === Xmin ||
+       positionY > Ymax ||
+       positionY === Ymin
+     ) {
+       reverse = !reverse;
+     }
+   }
+
+   setInterval(moveBall, 1000);
+    
+    setInterval(moveBall, 1000);
+
+    function moveBall2() {
+     
       var Xmin = 0;
-      var Xmax = 100;
+      var Xmax = 400;
     
       
       var Ymin = 0;
-      var Ymax = 100;
+      var Ymax = 300;
     
       if (reverse) {
-        positionX = positionX - velocity;
-        positionY = positionY - velocity;
-        ball.style.left = positionX + "px";
-        ball.style.top = positionY + "px";
+        positionX2 = positionX2 - velocity2;
+        positionY2 = positionY2 - velocity2;
+        ball2.style.left = positionX2 + "px";
+        ball2.style.top = positionY2 + "px";
       } else {
-        positionX = positionX + velocity;
-        positionY = positionY + velocity;
-        ball.style.left = positionX + "px";
-        ball.style.top = positionY + "px";
+        positionX2 = positionX2 + velocity2;
+        positionY2 = positionY2 + velocity2;
+        ball2.style.left = positionX2 + "px";
+        ball2.style.top = positionY2 + "px";
       }
     
       if (
-        positionX > Xmax ||
-        positionX === Xmin ||
-        positionY > Ymax ||
-        positionY === Ymin
+        positionX2 > Xmax ||
+        positionX2 === Xmin ||
+        positionY2 > Ymax ||
+        positionY2 === Ymin
       ) {
         reverse = !reverse;
       }
     }
+    setInterval(moveBall2, 1000);
+
+    function moveBall3() {
+     
+     var Xmin = 0;
+     var Xmax = 600;
+   
+     
+     var Ymin = 0;
+     var Ymax = 300;
+   
+     if (reverse) {
+       positionX3 = positionX3 - velocity3;
+       positionY3 = positionY3 - velocity3;
+       ball3.style.left = positionX3 + "px";
+       ball3.style.top = positionY3 + "px";
+     } else {
+       positionX3 = positionX3 + velocity3;
+       positionY3 = positionY3 + velocity3;
+       ball3.style.left = positionX3 + "px";
+       ball3.style.top = positionY3 + "px";
+     }
+   
+     if (
+       positionX3 > Xmax ||
+       positionX3 === Xmin ||
+       positionY3 > Ymax ||
+       positionY3 === Ymin
+     ) {
+       reverse = !reverse;
+     }
+   }
+   setInterval(moveBall3, 1000);
+
+   function moveBall4() {
+     
+     var Xmin = 0;
+     var Xmax = 550;
+   
+     
+     var Ymin = 0;
+     var Ymax = 350;
+   
+     if (reverse) {
+       positionX4 = positionX4 - velocity4;
+       positionY4 = positionY4 - velocity4;
+       ball4.style.left = positionX4 + "px";
+       ball4.style.top = positionY4 + "px";
+     } else {
+       positionX4 = positionX4 + velocity4;
+       positionY4 = positionY4 + velocity4;
+       ball4.style.left = positionX4 + "px";
+       ball4.style.top = positionY4 + "px";
+     }
+   
+     if (
+       positionX4 > Xmax ||
+       positionX4 === Xmin ||
+       positionY4 > Ymax ||
+       positionY4 === Ymin
+     ) {
+       reverse = !reverse;
+     }
+   }
+   setInterval(moveBall4, 1000);
+
+   function moveBall5() {
+     
+     var Xmin = 0;
+     var Xmax = 500;
+   
+     
+     var Ymin = 0;
+     var Ymax = 400;
+   
+     if (reverse) {
+       positionX5 = positionX5 - velocity5;
+       positionY5 = positionY5 - velocity5;
+       ball5.style.left = positionX5 + "px";
+       ball5.style.top = positionY5 + "px";
+     } else {
+       positionX5 = positionX5 + velocity5;
+       positionY5 = positionY5 + velocity5;
+       ball5.style.left = positionX5 + "px";
+       ball5.style.top = positionY5 + "px";
+     }
+   
+     if (
+       positionX5 > Xmax ||
+       positionX5 === Xmin ||
+       positionY5 > Ymax ||
+       positionY5 === Ymin
+     ) {
+       reverse = !reverse;
+     }
+   }
+   setInterval(moveBall5, 1000);
+
+   function moveBall6() {
+     
+     var Xmin = 0;
+     var Xmax = 450;
+   
+     
+     var Ymin = 0;
+     var Ymax = 350;
+   
+     if (reverse) {
+       positionX6 = positionX6 - velocity6;
+       positionY6 = positionY6 - velocity6;
+       ball6.style.left = positionX6 + "px";
+       ball6.style.top = positionY6 + "px";
+     } else {
+       positionX6 = positionX6 + velocity6;
+       positionY6 = positionY6 + velocity6;
+       ball6.style.left = positionX6 + "px";
+       ball6.style.top = positionY6 + "px";
+     }
+   
+     if (
+       positionX6 > Xmax ||
+       positionX6 === Xmin ||
+       positionY6 > Ymax ||
+       positionY6 === Ymin
+     ) {
+       reverse = !reverse;
+     }
+   }
+   setInterval(moveBall6, 1000);
+
+   function moveBall7() {
+     
+     var Xmin = 0;
+     var Xmax = 450;
+   
+     
+     var Ymin = 0;
+     var Ymax = 250;
+   
+     if (reverse) {
+       positionX7 = positionX7 - velocity7;
+       positionY7 = positionY7 - velocity7;
+       ball7.style.left = positionX7 + "px";
+       ball7.style.top = positionY7 + "px";
+     } else {
+       positionX7 = positionX7 + velocity7;
+       positionY7 = positionY7 + velocity7;
+       ball7.style.left = positionX7 + "px";
+       ball7.style.top = positionY7 + "px";
+     }
+   
+     if (
+       positionX7 > Xmax ||
+       positionX7 === Xmin ||
+       positionY7 > Ymax ||
+       positionY7 === Ymin
+     ) {
+       reverse = !reverse;
+     }
+   }
+   setInterval(moveBall7, 1000);
+
+   function moveBall8() {
+     
+     var Xmin = 0;
+     var Xmax = 550;
+   
+     
+     var Ymin = 0;
+     var Ymax = 250;
+   
+     if (reverse) {
+       positionX8 = positionX8 - velocity8;
+       positionY8 = positionY8 - velocity8;
+       ball8.style.left = positionX8 + "px";
+       ball8.style.top = positionY8 + "px";
+     } else {
+       positionX8 = positionX8 + velocity8;
+       positionY8 = positionY8 + velocity8;
+       ball8.style.left = positionX28+ "px";
+       ball8.style.top = positionY8 + "px";
+     }
+   
+     if (
+       positionX8 > Xmax ||
+       positionX8 === Xmin ||
+       positionY8 > Ymax ||
+       positionY8 === Ymin
+     ) {
+       reverse = !reverse 
+     }
+   }
+   
+   setInterval(moveBall8, 1000);
     
-    setInterval(moveBall, 500);
-    
-    
+  
+  
     </script>
 
